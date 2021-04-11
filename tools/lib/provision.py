@@ -167,9 +167,9 @@ COMMON_YUM_DEPENDENCIES = COMMON_DEPENDENCIES + [
 
 print("BUILD_DEBUG: vendor = " + vendor)
 print("BUILD_DEBUG: os_version = " + os_version)
-print("BUILD_DEBUG: os_families() = " + os_families())
 BUILD_PGROONGA_FROM_SOURCE = False
-if vendor == 'debian' and os_version in [] or vendor == 'ubuntu' and os_version in []:
+if vendor == 'debian' and os_version in [] or vendor == 'ubuntu' and os_version in ['20.04']:
+    print("BUILD_DEBUG: building pgroonga from source")
     # For platforms without a pgroonga release, we need to build it
     # from source.
     BUILD_PGROONGA_FROM_SOURCE = True
